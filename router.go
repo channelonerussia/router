@@ -23,14 +23,8 @@ type H = gin.H
 // HandlerFunc оболочка над gin.HandlerFunc.
 type HandlerFunc = gin.HandlerFunc
 
-// Config конфигурация роутера. Cors - конфигурация корсов, если nil,
-// то будет применен конфиг с "*". Swagger - флаг включения Swagger'а.
-type Config struct {
-	Swagger bool
-}
-
 // New создает инстанс роутера.
-func New(config *Config) (Router, error) {
+func New() (Router, error) {
 	// Создаем дефолтный роутер
 	router, GFErr := graceful.Default()
 
